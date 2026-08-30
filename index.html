@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Maker | Create Professional Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+ 
+    <link rel="icon" href="https://img.freepik.com/premium-vector/school-boy-profile-photo-using-dark-blue-colour-uniform_207545-28.jpg?w=2000" type="image/x-icon">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            CV <span>Maker</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#how">How It Works</a>
+            <button class="nav-btn" onclick="startBuilder()">Create CV</button>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="badge">✨ Smart Resume Builder</div>
+
+            <h1>Create Your Professional <span>CV in Minutes</span></h1>
+
+            <p>
+                Build a professional and attractive CV easily. Add your details,
+                preview your resume instantly and download it when you're ready.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="primary-btn" onclick="startBuilder()">
+                    Create My CV →
+                </button>
+
+                <button class="secondary-btn" onclick="scrollToFeatures()">
+                    Explore Features
+                </button>
+            </div>
+
+            <div class="stats">
+                <div>
+                    <h3>10K+</h3>
+                    <p>CVs Created</p>
+                </div>
+
+                <div>
+                    <h3>100%</h3>
+                    <p>Free to Use</p>
+                </div>
+
+                <div>
+                    <h3>PDF</h3>
+                    <p>Download Ready</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-card">
+            <div class="resume-mini">
+                <div class="mini-header">
+                    <div class="mini-avatar"></div>
+                    <div>
+                        <h3>YOUR NAME</h3>
+                        <p>Software Developer</p>
+                    </div>
+                </div>
+
+                <div class="mini-line"></div>
+                <div class="mini-line short"></div>
+
+                <h4>PROFILE</h4>
+                <div class="mini-line"></div>
+                <div class="mini-line"></div>
+
+                <h4>EDUCATION</h4>
+                <div class="mini-line"></div>
+                <div class="mini-line short"></div>
+
+                <h4>SKILLS</h4>
+
+                <div class="skill-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+
+        <div class="section-title">
+            <span>WHY CHOOSE US</span>
+            <h2>Everything You Need to Build a Great CV</h2>
+            <p>Create a professional resume without complicated tools.</p>
+        </div>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Fast & Easy</h3>
+                <p>Create your professional CV in just a few minutes.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">👀</div>
+                <h3>Live Preview</h3>
+                <p>See changes instantly while entering your details.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📄</div>
+                <h3>Professional Design</h3>
+                <p>Clean and modern resume design for students and professionals.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Responsive</h3>
+                <p>Create and view your CV from desktop, tablet or mobile.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how">
+
+        <div class="section-title">
+            <span>SIMPLE PROCESS</span>
+            <h2>Create Your CV in 3 Steps</h2>
+        </div>
+
+        <div class="steps">
+
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Enter Details</h3>
+                <p>Fill in your personal and professional information.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Preview CV</h3>
+                <p>See your resume update automatically in real time.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Download</h3>
+                <p>Print or save your professional CV as a PDF.</p>
+            </div>
+
+        </div>
+
+        <button class="primary-btn center-btn" onclick="startBuilder()">
+            Start Building Now →
+        </button>
+
+    </section>
+
+
+    <!-- CV BUILDER -->
+
+    <section class="builder" id="builder">
+
+        <div class="builder-header">
+            <div>
+                <h2>Build Your CV</h2>
+                <p>Fill in your details and see your CV live.</p>
+            </div>
+
+            
+        </div>
+
+        <div class="builder-container">
+
+            <!-- FORM -->
+
+            <div class="form-panel">
+
+                <h3>Personal Information</h3>
+
+                <div class="form-group photo-group">
+                    <label>Profile Photo</label>
+
+                    <input type="file" id="profileImage" accept="image/*">
+
+                    <img id="imagePreview" src="" alt="Preview">
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Professional Title</label>
+                        <input type="text" id="title" placeholder="e.g. Software Developer">
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="email" placeholder="example@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="text" id="phone" placeholder="+91 9876543210">
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" id="address" placeholder="City, State, Country">
+                </div>
+
+
+                <h3>Professional Summary</h3>
+
+                <div class="form-group">
+                    <textarea id="summary" rows="5"
+                        placeholder="Write a short professional summary about yourself"></textarea>
+                </div>
+
+
+                <h3>Education</h3>
+
+                <div class="education-item">
+
+                    <div class="form-group">
+                        <input type="text" id="degree" placeholder="Degree / Course">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="college" placeholder="College / University">
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <input type="text" id="year" placeholder="Year">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" id="percentage" placeholder="Percentage / CGPA">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <h3>Skills</h3>
+
+                <div class="form-group">
+                    <input type="text" id="skills"
+                        placeholder="HTML, CSS, JavaScript, Python">
+                </div>
+
+
+                <h3>Projects</h3>
+
+                <div class="form-group">
+                    <input type="text" id="projectName"
+                        placeholder="Project Name">
+                </div>
+
+                <div class="form-group">
+                    <textarea id="projectDescription" rows="4"
+                        placeholder="Project description"></textarea>
+                </div>
+
+
+                <h3>Experience</h3>
+
+                <div class="form-group">
+                    <input type="text" id="company"
+                        placeholder="Company Name">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="jobRole"
+                        placeholder="Job Role">
+                </div>
+
+                <div class="form-group">
+                    <textarea id="experience" rows="4"
+                        placeholder="Describe your work experience"></textarea>
+                </div>
+
+
+                <h3>Languages</h3>
+
+                <div class="form-group">
+                    <input type="text" id="languages"
+                        placeholder="English, Hindi">
+                </div>
+
+                <div class="download-section">
+    <button type="button" class="final-download-btn" onclick="downloadCV()">
+        ⬇ Download My CV
+    </button>
+    <p>Complete your details and download your professional CV.</p>
+
+</div>
+
+            </div>
+
+
+            <!-- CV PREVIEW -->
+
+            <div class="preview-panel">
+
+                <div class="cv" id="cvPreview">
+
+                    <div class="cv-header">
+
+                        <div>
+                            <h1 id="cvName">YOUR NAME</h1>
+
+                            <h3 id="cvTitle">Professional Title</h3>
+
+                            <div class="contact">
+
+                                <span id="cvEmail">email@example.com</span>
+
+                                <span id="cvPhone">+91 0000000000</span>
+
+                                <span id="cvAddress">Your Location</span>
+
+                            </div>
+
+                        </div>
+
+                        <img id="cvImage" src="" alt="Profile">
+
+                    </div>
+
+
+                    <div class="cv-section">
+
+                        <h2>PROFILE</h2>
+
+                        <p id="cvSummary">
+                            Write your professional summary here.
+                        </p>
+
+                    </div>
+
+
+                    <div class="cv-section">
+
+                        <h2>EDUCATION</h2>
+
+                        <div class="education-preview">
+
+                            <h3 id="cvDegree">Degree / Course</h3>
+
+                            <p id="cvCollege">College / University</p>
+
+<div class="education-details">
+    <div id="cvYear">Year</div>
+    <div id="cvPercentage">CGPA / Percentage</div>
+</div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="cv-section">
+
+                        <h2>SKILLS</h2>
+
+                        <div class="cv-skills" id="cvSkills">
+
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="cv-section">
+
+                        <h2>PROJECTS</h2>
+
+                        <div class="project-preview">
+
+                            <h3 id="cvProjectName">Project Name</h3>
+
+                            <p id="cvProjectDescription">
+                                Project description will appear here.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="cv-section">
+
+                        <h2>EXPERIENCE</h2>
+
+                        <div class="experience-preview">
+
+                            <h3>
+                                <span id="cvJobRole">Job Role</span>
+                                -
+                                <span id="cvCompany">Company Name</span>
+                            </h3>
+
+                            <p id="cvExperience">
+                                Work experience details.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="cv-section">
+
+                        <h2>LANGUAGES</h2>
+
+                        <div class="cv-skills" id="cvLanguages">
+
+                            <span>English</span>
+                            <span>Hindi</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        <h2>CV <span>Maker</span></h2>
+        <p>Create professional resumes quickly and easily.</p>
+        <p>© 2026 CV Maker | Abhay Jaiswal. All Rights Reserved.</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
